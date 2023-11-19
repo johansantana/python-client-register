@@ -4,8 +4,12 @@
 
 {% block content %}
 
-  <table>
-    <h1>Hola</h1>
-  </table>
+  <ul>
+    {% for client in clients %}
+      <li>{{ client }}</li>
+    {% empty %}  
+      <li>No clients are registered</li>
+    {% endfor %}
+  </ul>
 
 {% endblock content %}
