@@ -19,7 +19,13 @@ def register(request):
 
     # display a blank or invalid form
     context = {'form': form}
-    return render(request, 'register.html', context)
+    return render(request, 'registration/register.html', context)
 
 def logout(request):
-    return render(request, 'logged_out.html')
+    return render(request, 'registration/logged_out.html')
+
+def csrf_failure(request, reason=""):
+    """Error in CSRF"""
+    return render(request, 'registration/csrf_token.html', {
+        'reason': reason
+    })

@@ -5,7 +5,7 @@
 {% block content %}
   <form method="post" action="{% url 'users:register' %}" clas="register_form">
     {% csrf_token %}
-    {{ form.as_div }}
+    {{ form.as_p }}
 
     <button name="submit" class="cta-button">Registrarse</button>
     <input type="hidden" name="next" value="{% url 'clients:index' %}" />

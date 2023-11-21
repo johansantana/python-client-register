@@ -9,7 +9,7 @@
 
   <form action="{% url 'users:login' %}" method="post" class="login_form">
     {% csrf_token %}
-    {{ form }}
+    {{ form.as_p }}
     <button name="submit" class="cta-button">Iniciar sesión</button>
     <input type="hidden" name="next" value="{% url 'clients:index' %}" />
   </form>
