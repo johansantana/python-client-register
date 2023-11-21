@@ -9,6 +9,8 @@ class Client(models.Model):
     email = models.CharField(max_length=64)
     username = models.CharField(max_length=32)
 
+    date_added = models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         """Return a string representation of the class"""
         return f"{self.first_name} {self.last_name}"
