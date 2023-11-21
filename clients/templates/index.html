@@ -1,15 +1,19 @@
 {% extends "layouts/base.html" %}
 
-{% block pagetitle %}App{% endblock pagetitle %}
+{% block pagetitle %}Inicio{% endblock pagetitle %}
 
 {% block content %}
 
   <ul>
     {% for client in clients %}
-      <li>{{ client }}</li>
+      <li>
+        <a href="{% url 'clients:edit_client' client.id %}">{{ client }}</a>
+      </li>
     {% empty %}  
-      <li>No clients are registered</li>
+      <li>No hay clientes registrados</li>
     {% endfor %}
   </ul>
 
-{% endblock content %}
+  <a href="{% url 'clients:new_client' %}">Añadir nuevo cliente</a>
+
+{% endblock content %}  

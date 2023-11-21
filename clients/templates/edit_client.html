@@ -1,0 +1,18 @@
+{% extends "layouts/base.html" %}
+
+{% block pagetitle %}Editar{% endblock pagetitle %}
+
+{% block content %}
+
+  <p>Editar: {{ client }}</p>
+
+  <form action="{% url 'clients:edit_client' client.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button name="submit">Guardar cambios</button>
+  </form>
+
+{% endblock content %}
+
+
