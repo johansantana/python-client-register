@@ -1,6 +1,8 @@
 # Client Registerer
 
-### Tarea 4 - Mandato
+## Tarea 4
+
+### Mandato
 
 Crear un Login de usuarios donde se podrán ingresar con usuario y contraseña (al
 escribir la contraseña esta debe ocultarse), si el usuario no está registrado se podrá
@@ -12,7 +14,11 @@ usuarios registrados, sus nombres, número de teléfono y correo electrónico.
 
 ## Configurar servidor local de desarrollo
 
-Pasos configurar un servidor local de desarrollo con este projecto:
+### Requisitos
+
+- Python >= 3.10
+
+### Pasos:
 
 1. Tener python instalado (3.10 al menos).
 2. Instalar las dependencias que estan en `requirements.txt`
