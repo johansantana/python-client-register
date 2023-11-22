@@ -3,15 +3,30 @@
 {% block pagetitle %}Nuevo cliente{% endblock pagetitle %}
 
 {% block content %}
+  <div class="main-container">
+    <div class="form-container">
+      <h3>Añadir nuevo cliente</h3>
 
-  <p>Añadir nuevo cliente</p>
+      <form action="{% url 'clients:new_client' %}" method='post'>
+        {% csrf_token %}
+        {% for field in form %}
+          <div>
+            {{ field }}
+          </div>
+        {% endfor %}
 
-  <form action="{% url 'clients:new_client' %}" method='post'>
-    {% csrf_token %}
-    {{ form.as_p }}
-
-    <button name="submit">Añadir cliente</button>
-  </form>
+        <button name="submit" class="btn primary-btn">
+          <span>Añadir cliente</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
+        </button>
+        <a href="{% url 'clients:index' %}" class="btn secondary-btn">
+          <span>Volver atrás</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-back-up" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14l-4 -4l4 -4" /><path d="M5 10h11a4 4 0 1 1 0 8h-1" /></svg>
+        </a>
+      </form>
+    </div>
+  </div>
+  
 
 {% endblock content %}
 

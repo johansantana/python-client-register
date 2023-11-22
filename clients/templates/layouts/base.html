@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro de Clientes - {% block pagetitle %}{% endblock pagetitle %}</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 <body>
-  {% block content %}{% endblock content %}  
+  <main>
+    {% block content %}{% endblock content %}  
+  </main>
 </body>
 </html>
