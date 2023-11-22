@@ -52,3 +52,13 @@ def edit_client(request, client_id):
         
     context = { 'client': client, 'form': form }
     return render(request, 'edit_client.html', context)
+
+@login_required
+def delete_client(request, client_id):
+    """Delete an existing client"""
+    client = Client.objects.get(id=client_id)
+    if client.user != request.user:
+        raise Http404
+    
+    client.delete()
+    return redirect('clients:index')
