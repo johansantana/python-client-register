@@ -2,8 +2,6 @@
 
 ## Tarea 4
 
-### Mandato
-
 Crear un Login de usuarios donde se podrán ingresar con usuario y contraseña (al
 escribir la contraseña esta debe ocultarse), si el usuario no está registrado se podrá
 registrar ingresando los siguientes campos (nombre de usuario, nombre, apellido,
