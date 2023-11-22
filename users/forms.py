@@ -13,12 +13,12 @@ class UserLoginForm(AuthenticationForm):
 class RegisterUserForm(UserCreationForm):
     class Meta:
         model = ModifiedUser
-        fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
+        fields = ('first_name', 'last_name', 'username', 'email', 'phone_number', 'password1', 'password2')
 
     def __init__(self, *args, **kwargs):
         super(RegisterUserForm, self).__init__(*args, **kwargs)
 
-        placeholders = ('Nombre', 'Apellido', 'Usuario', 'Correo electrónico', 'Contraseña', 'Confirmar contraseña')
+        placeholders = ('Nombre', 'Apellido', 'Usuario', 'Correo electrónico', 'Número de teléfono', 'Contraseña', 'Confirmar contraseña')
 
         for i, fieldname in enumerate(self.fields):
             self.fields[fieldname].help_text = None
