@@ -192,6 +192,8 @@ thead {
 }
 
 .errors {
+  max-width: 520px;
+  opacity: 0.9;
   background-color: var(--slight-red-color);
   color: var(--red-color);
   border: 2px var(--red-color) solid;

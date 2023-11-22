@@ -11,7 +11,11 @@
     <section>
       {% if form.errors %}
       <div class="errors">
-        <p>Tu usuario y tu contraseña no coinciden. Por favor intenta de nuevo.</p>
+        {% for field, errors in form.errors.items  %}
+          {% for error in errors %}
+            <p>{{ error }}</p>
+          {% endfor %}
+        {% endfor %}
       </div>
       {% endif %}
       <div>

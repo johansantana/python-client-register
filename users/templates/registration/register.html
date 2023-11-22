@@ -9,6 +9,15 @@
       <img src="{% static 'images/character_scooter.svg' %}" alt="">
     </section>
     <section>
+      {% if form.errors %}
+      <div class="errors">
+        {% for field, errors in form.errors.items  %}
+          {% for error in errors %}
+            <p>{{ error }}</p>
+          {% endfor %}
+        {% endfor %}
+      </div>
+      {% endif %}
       <div>
         <h2>Regístrate</h2>
       </div>
