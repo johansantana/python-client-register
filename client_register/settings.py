@@ -128,7 +128,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # My settings
-LOGIN_URL = 'users:login'
+LOGIN_URL = 'login'
 
 CSRF_FAILURE_VIEW = 'users.views.csrf_failure'
 
